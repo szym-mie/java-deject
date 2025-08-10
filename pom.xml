@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>java-deject</name>
+    <description>Minimal Java dependency injector</description>
+    <url>https://github.com/szym-mie/java-deject</url>
+
+    <groupId>com.szymmie</groupId>
+    <artifactId>deject</artifactId>
+    <version>0.9.0</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/license/mit</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>szym-mie</id>
+            <name>Szymon Miękina</name>
+            <email>szym.mie@gmail.com</email>
+            <url>https://github.com/szym-mie</url>
+            <roles>
+                <role>developer</role>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/szym-mie/java-deject.git</connection>
+        <developerConnection>scm:git:ssh://github.com:szym-mie/java-deject.git</developerConnection>
+        <url>https://github.com/szym-mie/java-deject</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/szym-mie/java-deject/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>szym-mie</name>
+            <url>https://maven.pkg.github.com/szym-mie/java-deject</url>
+        </repository>
+    </distributionManagement>
+</project>
