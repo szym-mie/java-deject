@@ -1,6 +1,5 @@
 package com.szymmie.deject.solver;
 
-import com.szymmie.deject.retrospect.InjectException;
 import com.szymmie.deject.retrospect.Provider;
 
 import java.util.HashMap;
@@ -17,7 +16,7 @@ public class ByNameSolver implements Solver {
     public void link(String name, Solver solver) {
         if (this.nameMapping.containsKey(name)) {
             String reason = String.format("cannot link solver, name '%s' is already taken", name);
-            throw new InjectException(solver.getClass(), reason);
+            throw new SolverException(reason);
         }
         this.nameMapping.put(name, solver);
     }

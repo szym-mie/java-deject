@@ -1,6 +1,5 @@
 package com.szymmie.deject.solver;
 
-import com.szymmie.deject.retrospect.InjectException;
 import com.szymmie.deject.retrospect.Provider;
 import com.szymmie.deject.retrospect.Types;
 
@@ -19,7 +18,7 @@ public class ByTypeSolver implements Solver {
         if (this.typeMapping.containsKey(type)) {
             String name = Types.getTypeName(type);
             String reason = String.format("cannot link solver, type '%s' is already taken", name);
-            throw new InjectException(solver.getClass(), reason);
+            throw new SolverException(reason);
         }
         this.typeMapping.put(type, solver);
     }

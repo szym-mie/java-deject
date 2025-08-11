@@ -29,9 +29,15 @@ public class BindPoint {
 
     @Override
     public String toString() {
-        String maybeName = this.isNamed() ? String.format("'%s'", this.name) : "<anon>";
         String type = Types.getTypeName(this.type);
-        return String.format("BindPoint(named %s -> %s)", maybeName, type);
+        switch (this.source) {
+            case PROVIDER:
+                String maybeName = this.isNamed() ? String.format("'%s'", this.name) : "<anon>";
+                return String.format("BindPoint(provide %s & %s)", type, maybeName);
+            case INJECTOR:
+                return String.format("BindPoint(inject %s)", type);
+        }
+        return "BindPoint(unknown)";
     }
 
 }

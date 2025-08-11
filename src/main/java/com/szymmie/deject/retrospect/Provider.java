@@ -25,11 +25,11 @@ public class Provider {
         try {
             return type.cast(this.method.invoke(this.module));
         } catch (IllegalAccessException e) {
-            throw new InjectException(type, "provider is not public in your module");
+            throw new BindException(this.bindPoint, "provider is not public in your module");
         } catch (InvocationTargetException e) {
-            throw new InjectException(type, "provider methods cannot have parameters");
+            throw new BindException(this.bindPoint, "provider methods cannot have parameters");
         } catch (ClassCastException e) {
-            throw new InjectException(type, "provided produces incompatible type");
+            throw new BindException(this.bindPoint, "provided produces incompatible type");
         }
     }
 

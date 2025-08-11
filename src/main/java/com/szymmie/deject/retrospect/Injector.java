@@ -42,7 +42,7 @@ public class Injector<S> {
                 case PROVIDER:
                     args[i] = this.container.provide(input)
                             .map(Provider::create)
-                            .orElse(null);
+                            .orElseThrow(() -> new BindException(input, "no provider found"));
                     break;
             }
             i++;
