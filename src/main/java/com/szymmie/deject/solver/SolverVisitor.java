@@ -16,7 +16,6 @@ public class SolverVisitor {
     }
 
     public Optional<Solver> visitByName(ByNameSolver byNameSolver) {
-        Optional<Solver> maybeSolver = byNameSolver.find(this.bindPoint.getName());
-        return maybeSolver.isPresent() ? maybeSolver : byNameSolver.findDefault();
+        return byNameSolver.find(this.bindPoint.getName());
     }
 }
