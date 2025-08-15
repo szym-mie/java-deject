@@ -25,7 +25,7 @@ public class Provider {
         try {
             return type.cast(this.method.invoke(this.module));
         } catch (IllegalAccessException e) {
-            throw new BindException(this.bindPoint, "provider is not public in your module");
+            throw new BindException(this.bindPoint, "provider or module is not public");
         } catch (InvocationTargetException e) {
             throw new BindException(this.bindPoint, "provider methods cannot have parameters");
         } catch (ClassCastException e) {
